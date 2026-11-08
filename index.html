@@ -45,7 +45,8 @@
   .hero{background:var(--navy); color:var(--white); padding:14px 0 0; text-align:center}
   .conf-pill{display:inline-block; border:1px solid var(--gold); color:var(--gold-lt); border-radius:999px;
     padding:6px 16px; font:600 12px/1.4 var(--head); letter-spacing:.12em; text-transform:uppercase}
-  .hero h1{font:800 clamp(46px,11vw,96px)/1.15 Montserrat,sans-serif; letter-spacing:.06em; margin:18px 0 6px}
+  .hero h1{font:800 clamp(28px,6.4vw,50px)/1.25 var(--head); max-width:860px; margin:18px auto 6px}
+  .hero h1 .g{color:var(--gold)}
   .hero .sub{font:600 clamp(18px,3.6vw,28px)/1.35 var(--head); color:#e8ecf5; margin:0}
   .hero .tag{display:block; margin:14px 0 24px; color:var(--green); font:700 15px/1.5 var(--head); letter-spacing:.02em}
   .hero-actions{margin:0 0 28px}
@@ -91,6 +92,8 @@
   .stat span{font-size:14px; color:var(--muted)}
 
   .buyback{border:2px solid var(--gold); background:#fff; border-radius:14px; padding:24px}
+  .buyback h2{font-size:clamp(20px,3.6vw,26px)}
+  .caution{font-size:16px !important}
   .example{display:flex; align-items:center; justify-content:center; gap:14px; flex-wrap:wrap;
     background:var(--navy); color:#fff; border-radius:10px; padding:16px; margin:16px 0; font:800 26px/1.2 var(--head)}
   .example .arrow{color:var(--gold)}
@@ -157,8 +160,7 @@
       <button type="button" data-lang="en">English</button>
     </div>
     <span class="conf-pill" data-t="conf"></span>
-    <h1>DWARKA</h1>
-    <p class="sub" data-t="sub"></p>
+    <h1 data-t="h1"></h1>
     <span class="tag" data-t="tag"></span>
     <div class="hero-actions"><a class="btn btn-green" href="#register" data-t="cta_btn"></a></div>
   </div>
@@ -220,7 +222,6 @@
     <div class="buyback">
       <p class="eyebrow" style="color:#8a6a12" data-t="bb_eb"></p>
       <h2 data-t="bb_h"></h2>
-      <p style="margin:0" data-t="bb_p"></p>
       <div class="example">
         <div><span data-t="ex1"></span><small data-t="ex1s"></small></div>
         <div class="arrow">→</div>
@@ -360,31 +361,32 @@ var WA = '<a href="https://wa.me/919913121121">+91 99131 21121</a>';
 
 var T = {
 en: {
+  h1: "Investment Opportunity in a Proposed Resort Project in <span class=\"g\">Dwarka</span>",
   title: "Dwarka · Private Project Discussion",
   conf: "Strictly confidential · Do not forward",
   sub: "A Proposed Coastal Resort Investment",
   tag: "Private project discussion · By registration only",
   cta_btn: "Register for the discussion",
-  badge: "AI concept",
-  cap: "AI concept of the proposed resort — not an actual site photograph.",
+  badge: "AI illustration",
+  cap: "AI illustration of the proposed resort. Not an actual site photograph.",
   notice: "<strong>Strictly confidential.</strong> For registered participants only. Do not forward or share publicly.",
   proj_eb: "The project", proj_h: "Land near Dwarka, on the coast",
   proj_lead: "Richwealth is considering acquiring <strong>16 lakh sq. ft. of non-residential land</strong> within a larger 72-acre property near Dwarka.",
-  loc_h: "Location highlights", loc1: "Beachfront", loc2: "National highway frontage", loc3: "Approximately 15–16 km from Dwarkadhish Temple",
+  loc_h: "Location highlights", loc1: "Beachfront", loc2: "Direct access to the national highway", loc3: "Approximately 15–16 km from Dwarkadhish Temple",
   loc_fine: "Location highlights are as supplied by the company. Site area, classification, frontage and distance remain subject to verification.",
-  vis_h: "Future vision",
-  vis_p: "Develop a membership-based coastal resort in Dwarka, with a longer-term vision for a Char Dham hospitality network.",
+  vis_h: "Our vision",
+  vis_p: "A holiday membership resort in Dwarka, followed by resorts at Char Dham destinations.",
   part_eb: "Proposed participation", part_h: "How participation is proposed to work",
   price_unit: "per sq. ft.",
-  price_p: "<strong style=\"color:#fff\">Minimum: 1,000 sq. ft. / ₹4 lakh.</strong> Additional participation in multiples of 1,000 sq. ft.",
+  price_p: "<strong style=\"color:#fff;font-size:1.25em\">Minimum investment: ₹4 lakh</strong><br>₹4 lakh per 1,000 sq. ft. Invest ₹4 lakh, ₹8 lakh, ₹12 lakh, and so on.",
   st1b: "16 lakh sq. ft.", st1: "Total proposed project area",
-  st2b: "10 lakh sq. ft.", st2: "Proposed investor allocation",
-  st3b: "6 lakh sq. ft.",  st3: "Proposed company allocation",
-  part_fine: "A participation of 1,000 sq. ft. is a share in the proposed project. It does not mean an individually registered plot.",
-  bb_eb: "Proposed buyback", bb_h: "Buyback at twice the participation amount after four years",
+  st2b: "10 lakh sq. ft.", st2: "Land area allocated for investor participation",
+  st3b: "6 lakh sq. ft.",  st3: "Land area allocated to the company",
+  part_fine: "Participation is proposed through shares in the company holding the property. The area shown represents investment participation; it does not mean a separately registered plot.",
+  bb_eb: "Proposed buyback", bb_h: "Company’s proposal to buy back your investment after 4 years at twice the original amount.",
   bb_p: "The company proposes a buyback at twice the original participation amount after four years, representing 100% appreciation.",
-  ex1: "₹4 lakh", ex1s: "Participation", ex2: "₹8 lakh", ex2s: "Proposed buyback after 4 years",
-  caution: "This is a proposed company buyback, subject to definitive agreements and the company’s ability to fulfil its obligations. It is not a guaranteed market appreciation or guaranteed return.",
+  ex1: "₹4 lakh", ex1s: "Participation", ex2: "₹8 lakh", ex2s: "after 4 years",
+  caution: "Subject to the final agreement and the company’s ability to pay. Returns are not guaranteed.",
   disc_eb: "For discussion",
   own_h: "Ownership proposal",
   own_p: "The intention is to hold the property through a company and issue shares to participating investors. The proposed ownership split is:",
@@ -392,10 +394,10 @@ en: {
   own_fine: "This is an ownership proposal, not a profit or revenue distribution formula. Final share allocation, voting rights, income distribution and the effect of the buyback on ownership still need to be clarified and set out in definitive agreements.",
   mem_h: "Membership proposal", mem_p: "The future resort may offer holiday memberships.",
   mem_fine: "Stay entitlements, booking rules, taxes, maintenance charges and other fees are not yet finalised.",
-  reg_eb: "Private video meetings", reg_h: "Register for the Project Discussion",
+  reg_eb: "Private video meetings", reg_h: "Online meeting",
   m_dates: "Dates", m_dates_v: "Mon 9 · Wed 11 · Fri 13 · Sun 15 November 2026",
-  m_time: "Time", m_time_v: "3:00 – 5:00 PM IST", m_plat: "Platform",
-  reg_cta: "Choose the date that suits you and register to receive your video meeting link.",
+  m_time: "Time", m_time_v: "3–5 PM, Indian Standard Time", m_plat: "Platform",
+  reg_cta: "Join our online meeting to understand the project and ask your questions.<br><strong>Choose one date: 9, 11, 13 or 15 November 2026.</strong><br><strong>Each meeting: 3–5 PM, Indian Standard Time.</strong><br>Register below to receive your Google Meet link.",
   f_meeting: "Which meeting will you attend?", m_sel: "Select a date…", e_meeting: "Please choose a meeting date.",
   f_name: "Full name", e_name: "Please enter your full name.",
   f_mobile: "Mobile number (WhatsApp)", h_mobile: "(with country code, e.g. +91 98765 43210)", e_mobile: "Please enter your mobile number with country code.",
@@ -424,31 +426,32 @@ en: {
   foot2: "Strictly confidential · Private discussion by registration only · dwarka.richwealth.in"
 },
 hi: {
+  h1: "<span class=\"g\">द्वारका</span> में प्रस्तावित रिज़ॉर्ट प्रोजेक्ट में निवेश का अवसर",
   title: "द्वारका · निजी प्रोजेक्ट चर्चा",
   conf: "पूर्णतः गोपनीय · आगे फ़ॉरवर्ड न करें",
   sub: "एक प्रस्तावित समुद्र-तटीय रिज़ॉर्ट निवेश",
   tag: "निजी प्रोजेक्ट चर्चा · केवल रजिस्ट्रेशन द्वारा",
   cta_btn: "चर्चा के लिए रजिस्टर करें",
-  badge: "AI कॉन्सेप्ट",
-  cap: "प्रस्तावित रिज़ॉर्ट का AI कॉन्सेप्ट — यह साइट की असली फ़ोटो नहीं है।",
+  badge: "AI तस्वीर",
+  cap: "प्रस्तावित रिज़ॉर्ट की AI तस्वीर। यह वास्तविक साइट की फोटो नहीं है।",
   notice: "<strong>पूर्णतः गोपनीय।</strong> केवल रजिस्टर्ड प्रतिभागियों के लिए। इसे आगे फ़ॉरवर्ड या सार्वजनिक रूप से शेयर न करें।",
   proj_eb: "प्रोजेक्ट", proj_h: "द्वारका के पास, समुद्र किनारे ज़मीन",
   proj_lead: "Richwealth द्वारका के पास 72 एकड़ की एक बड़ी प्रॉपर्टी में से <strong>16 लाख वर्ग फ़ुट गैर-आवासीय (non-residential) ज़मीन</strong> लेने पर विचार कर रही है।",
-  loc_h: "लोकेशन की खास बातें", loc1: "समुद्र किनारे (बीचफ़्रंट)", loc2: "नेशनल हाईवे फ़्रंटेज", loc3: "द्वारकाधीश मंदिर से लगभग 15–16 किमी",
+  loc_h: "लोकेशन की खास बातें", loc1: "समुद्र किनारे", loc2: "नेशनल हाईवे से सीधा जुड़ाव", loc3: "द्वारकाधीश मंदिर से लगभग 15–16 किमी",
   loc_fine: "लोकेशन की जानकारी कंपनी द्वारा दी गई है। साइट का क्षेत्रफल, वर्गीकरण, फ़्रंटेज और दूरी अभी सत्यापन (verification) के अधीन हैं।",
-  vis_h: "भविष्य का विज़न",
-  vis_p: "द्वारका में मेंबरशिप-आधारित समुद्र-तटीय रिज़ॉर्ट बनाना, और आगे चलकर चार धाम हॉस्पिटैलिटी नेटवर्क का विज़न।",
+  vis_h: "हमारा लक्ष्य",
+  vis_p: "द्वारका में हॉलिडे मेंबरशिप रिज़ॉर्ट और आगे चार धाम स्थलों पर रिज़ॉर्ट।",
   part_eb: "प्रस्तावित भागीदारी", part_h: "भागीदारी कैसे प्रस्तावित है",
   price_unit: "प्रति वर्ग फ़ुट",
-  price_p: "<strong style=\"color:#fff\">न्यूनतम: 1,000 वर्ग फ़ुट / ₹4 लाख।</strong> इससे ज़्यादा भागीदारी 1,000 वर्ग फ़ुट के गुणकों में।",
-  st1b: "16 लाख वर्ग फ़ुट", st1: "कुल प्रस्तावित प्रोजेक्ट क्षेत्र",
-  st2b: "10 लाख वर्ग फ़ुट", st2: "निवेशकों के लिए प्रस्तावित हिस्सा",
-  st3b: "6 लाख वर्ग फ़ुट",  st3: "कंपनी के लिए प्रस्तावित हिस्सा",
-  part_fine: "1,000 वर्ग फ़ुट की भागीदारी प्रस्तावित प्रोजेक्ट में एक हिस्सा है। इसका मतलब अलग से रजिस्टर्ड व्यक्तिगत प्लॉट नहीं है।",
-  bb_eb: "प्रस्तावित बायबैक", bb_h: "चार साल बाद भागीदारी राशि के दोगुने पर बायबैक",
+  price_p: "<strong style=\"color:#fff;font-size:1.25em\">न्यूनतम निवेश: ₹4 लाख</strong><br>हर 1,000 वर्ग फुट के लिए ₹4 लाख। निवेश: ₹4 लाख, ₹8 लाख, ₹12 लाख…",
+  st1b: "16 लाख वर्ग फ़ुट", st1: "प्रस्तावित प्रोजेक्ट का कुल क्षेत्रफल",
+  st2b: "10 लाख वर्ग फ़ुट", st2: "निवेशकों की भागीदारी के लिए भूमि क्षेत्र",
+  st3b: "6 लाख वर्ग फ़ुट",  st3: "कंपनी के लिए भूमि क्षेत्र",
+  part_fine: "भागीदारी उस कंपनी के शेयरों के ज़रिए प्रस्तावित है जिसके पास प्रॉपर्टी होगी। दिखाया गया क्षेत्र निवेश में भागीदारी दर्शाता है; इसका मतलब अलग से रजिस्टर्ड प्लॉट नहीं है।",
+  bb_eb: "प्रस्तावित बायबैक", bb_h: "कंपनी का प्रस्ताव: 4 साल बाद आपके निवेश को मूल राशि की दोगुनी रकम पर वापस खरीदना।",
   bb_p: "कंपनी चार साल बाद मूल भागीदारी राशि के दोगुने पर बायबैक का प्रस्ताव रखती है, यानी 100% वृद्धि।",
-  ex1: "₹4 लाख", ex1s: "भागीदारी", ex2: "₹8 लाख", ex2s: "4 साल बाद प्रस्तावित बायबैक",
-  caution: "यह कंपनी द्वारा प्रस्तावित बायबैक है, जो अंतिम (definitive) समझौतों और कंपनी की अपनी ज़िम्मेदारियाँ पूरी करने की क्षमता के अधीन है। यह गारंटीड बाज़ार वृद्धि या गारंटीड रिटर्न नहीं है।",
+  ex1: "₹4 लाख", ex1s: "भागीदारी", ex2: "₹8 लाख", ex2s: "4 साल बाद",
+  caution: "अंतिम समझौते और कंपनी की भुगतान क्षमता के अधीन। रिटर्न की गारंटी नहीं है।",
   disc_eb: "चर्चा के लिए",
   own_h: "स्वामित्व (ownership) प्रस्ताव",
   own_p: "इरादा यह है कि प्रॉपर्टी एक कंपनी के ज़रिए रखी जाए और भाग लेने वाले निवेशकों को शेयर दिए जाएँ। प्रस्तावित स्वामित्व बँटवारा:",
@@ -456,10 +459,10 @@ hi: {
   own_fine: "यह स्वामित्व का प्रस्ताव है, मुनाफ़ा या आय बँटवारे का फ़ॉर्मूला नहीं। अंतिम शेयर आवंटन, वोटिंग अधिकार, आय वितरण और बायबैक का स्वामित्व पर असर अभी स्पष्ट होना बाकी है और अंतिम समझौतों में तय होगा।",
   mem_h: "मेंबरशिप प्रस्ताव", mem_p: "भविष्य का रिज़ॉर्ट हॉलिडे मेंबरशिप दे सकता है।",
   mem_fine: "रुकने की पात्रता, बुकिंग नियम, टैक्स, मेंटेनेंस चार्ज और अन्य फ़ीस अभी तय नहीं हुई हैं।",
-  reg_eb: "निजी वीडियो मीटिंग", reg_h: "प्रोजेक्ट चर्चा के लिए रजिस्टर करें",
+  reg_eb: "निजी वीडियो मीटिंग", reg_h: "ऑनलाइन मीटिंग",
   m_dates: "तारीखें", m_dates_v: "सोम 9 · बुध 11 · शुक्र 13 · रवि 15 नवंबर 2026",
-  m_time: "समय", m_time_v: "दोपहर 3:00 – शाम 5:00 (IST)", m_plat: "प्लेटफ़ॉर्म",
-  reg_cta: "अपनी सुविधा की तारीख चुनें और वीडियो मीटिंग लिंक पाने के लिए रजिस्टर करें।",
+  m_time: "समय", m_time_v: "दोपहर 3 से शाम 5 बजे तक — भारतीय समय", m_plat: "प्लेटफ़ॉर्म",
+  reg_cta: "प्रोजेक्ट को समझने और अपने सवाल पूछने के लिए ऑनलाइन मीटिंग में जुड़ें।<br><strong>9, 11, 13 या 15 नवंबर 2026 में से एक तारीख चुनें।</strong><br><strong>हर मीटिंग: दोपहर 3 से शाम 5 बजे तक — भारतीय समय।</strong><br>Google Meet लिंक पाने के लिए नीचे रजिस्टर करें।",
   f_meeting: "आप किस मीटिंग में शामिल होंगे?", m_sel: "तारीख चुनें…", e_meeting: "कृपया मीटिंग की तारीख चुनें।",
   f_name: "पूरा नाम", e_name: "कृपया अपना पूरा नाम लिखें।",
   f_mobile: "मोबाइल नंबर (WhatsApp)", h_mobile: "(कंट्री कोड के साथ, जैसे +91 98765 43210)", e_mobile: "कृपया कंट्री कोड के साथ मोबाइल नंबर लिखें।",
@@ -488,31 +491,32 @@ hi: {
   foot2: "पूर्णतः गोपनीय · केवल रजिस्ट्रेशन द्वारा निजी चर्चा · dwarka.richwealth.in"
 },
 gu: {
+  h1: "<span class=\"g\">દ્વારકામાં</span> પ્રસ્તાવિત રિસોર્ટ પ્રોજેક્ટમાં રોકાણની તક",
   title: "દ્વારકા · ખાનગી પ્રોજેક્ટ ચર્ચા",
   conf: "સંપૂર્ણ ગોપનીય · આગળ ફોરવર્ડ ન કરશો",
   sub: "એક પ્રસ્તાવિત દરિયાકાંઠાનું રિસોર્ટ રોકાણ",
   tag: "ખાનગી પ્રોજેક્ટ ચર્ચા · માત્ર રજિસ્ટ્રેશન દ્વારા",
   cta_btn: "ચર્ચા માટે રજિસ્ટર કરો",
-  badge: "AI કોન્સેપ્ટ",
-  cap: "પ્રસ્તાવિત રિસોર્ટનો AI કોન્સેપ્ટ — આ સાઇટનો વાસ્તવિક ફોટો નથી.",
+  badge: "AI ચિત્ર",
+  cap: "પ્રસ્તાવિત રિસોર્ટનું AI ચિત્ર. આ વાસ્તવિક સ્થળનો ફોટો નથી.",
   notice: "<strong>સંપૂર્ણ ગોપનીય.</strong> માત્ર રજિસ્ટર્ડ સહભાગીઓ માટે. આગળ ફોરવર્ડ કે જાહેરમાં શેર ન કરશો.",
   proj_eb: "પ્રોજેક્ટ", proj_h: "દ્વારકા પાસે, દરિયાકાંઠે જમીન",
   proj_lead: "Richwealth દ્વારકા પાસે 72 એકરની એક મોટી પ્રોપર્ટીમાંથી <strong>16 લાખ ચો. ફૂટ બિન-રહેણાંક (non-residential) જમીન</strong> લેવાનું વિચારી રહી છે.",
-  loc_h: "લોકેશનની ખાસ વાતો", loc1: "દરિયાકિનારે (બીચફ્રન્ટ)", loc2: "નેશનલ હાઈવે ફ્રન્ટેજ", loc3: "દ્વારકાધીશ મંદિરથી આશરે 15–16 કિમી",
+  loc_h: "લોકેશનની ખાસ વાતો", loc1: "દરિયાકિનારે", loc2: "નેશનલ હાઈવે સાથે સીધું જોડાણ", loc3: "દ્વારકાધીશ મંદિરથી આશરે 15–16 કિમી",
   loc_fine: "લોકેશનની માહિતી કંપની દ્વારા આપવામાં આવી છે. સાઇટનું ક્ષેત્રફળ, વર્ગીકરણ, ફ્રન્ટેજ અને અંતર હજુ ચકાસણી (verification)ને આધીન છે.",
-  vis_h: "ભવિષ્યનું વિઝન",
-  vis_p: "દ્વારકામાં મેમ્બરશિપ-આધારિત દરિયાકાંઠાનો રિસોર્ટ બનાવવો, અને લાંબા ગાળે ચાર ધામ હોસ્પિટાલિટી નેટવર્કનું વિઝન.",
+  vis_h: "અમારું લક્ષ્ય",
+  vis_p: "દ્વારકામાં હોલિડે મેમ્બરશિપ રિસોર્ટ અને ભવિષ્યમાં ચાર ધામ સ્થળોએ રિસોર્ટ.",
   part_eb: "પ્રસ્તાવિત ભાગીદારી", part_h: "ભાગીદારી કેવી રીતે પ્રસ્તાવિત છે",
   price_unit: "પ્રતિ ચો. ફૂટ",
-  price_p: "<strong style=\"color:#fff\">ઓછામાં ઓછું: 1,000 ચો. ફૂટ / ₹4 લાખ.</strong> વધુ ભાગીદારી 1,000 ચો. ફૂટના ગુણાંકમાં.",
-  st1b: "16 લાખ ચો. ફૂટ", st1: "કુલ પ્રસ્તાવિત પ્રોજેક્ટ વિસ્તાર",
-  st2b: "10 લાખ ચો. ફૂટ", st2: "રોકાણકારો માટે પ્રસ્તાવિત હિસ્સો",
-  st3b: "6 લાખ ચો. ફૂટ",  st3: "કંપની માટે પ્રસ્તાવિત હિસ્સો",
-  part_fine: "1,000 ચો. ફૂટની ભાગીદારી પ્રસ્તાવિત પ્રોજેક્ટમાં એક હિસ્સો છે. તેનો અર્થ અલગથી રજિસ્ટર થયેલો વ્યક્તિગત પ્લોટ નથી.",
-  bb_eb: "પ્રસ્તાવિત બાયબેક", bb_h: "ચાર વર્ષ પછી ભાગીદારીની રકમના બમણા પર બાયબેક",
+  price_p: "<strong style=\"color:#fff;font-size:1.25em\">ઓછામાં ઓછું રોકાણ: ₹4 લાખ</strong><br>દર 1,000 ચો. ફૂટ માટે ₹4 લાખ. રોકાણ: ₹4 લાખ, ₹8 લાખ, ₹12 લાખ…",
+  st1b: "16 લાખ ચો. ફૂટ", st1: "પ્રસ્તાવિત પ્રોજેક્ટનો કુલ વિસ્તાર",
+  st2b: "10 લાખ ચો. ફૂટ", st2: "રોકાણકારોની ભાગીદારી માટે જમીનનો વિસ્તાર",
+  st3b: "6 લાખ ચો. ફૂટ",  st3: "કંપની માટે જમીનનો વિસ્તાર",
+  part_fine: "ભાગીદારી પ્રોપર્ટી ધરાવતી કંપનીના શેર દ્વારા પ્રસ્તાવિત છે. દર્શાવેલ વિસ્તાર રોકાણમાં ભાગીદારી દર્શાવે છે; તેનો અર્થ અલગથી રજિસ્ટર થયેલો પ્લોટ નથી.",
+  bb_eb: "પ્રસ્તાવિત બાયબેક", bb_h: "કંપનીનો પ્રસ્તાવ: 4 વર્ષ પછી તમારું રોકાણ મૂળ રકમની બમણી કિંમતે પરત ખરીદવું.",
   bb_p: "કંપની ચાર વર્ષ પછી મૂળ ભાગીદારીની રકમના બમણા પર બાયબેકનો પ્રસ્તાવ મૂકે છે, એટલે કે 100% વૃદ્ધિ.",
-  ex1: "₹4 લાખ", ex1s: "ભાગીદારી", ex2: "₹8 લાખ", ex2s: "4 વર્ષ પછી પ્રસ્તાવિત બાયબેક",
-  caution: "આ કંપની દ્વારા પ્રસ્તાવિત બાયબેક છે, જે અંતિમ (definitive) કરારો અને કંપનીની પોતાની જવાબદારીઓ પૂરી કરવાની ક્ષમતાને આધીન છે. આ ગેરંટીડ બજાર વૃદ્ધિ કે ગેરંટીડ વળતર નથી.",
+  ex1: "₹4 લાખ", ex1s: "ભાગીદારી", ex2: "₹8 લાખ", ex2s: "4 વર્ષ પછી",
+  caution: "અંતિમ કરાર અને કંપનીની ચુકવણી કરવાની ક્ષમતાને આધીન. વળતરની ગેરંટી નથી.",
   disc_eb: "ચર્ચા માટે",
   own_h: "માલિકી (ownership) પ્રસ્તાવ",
   own_p: "ઇરાદો એ છે કે પ્રોપર્ટી એક કંપની મારફતે રાખવામાં આવે અને ભાગ લેનાર રોકાણકારોને શેર આપવામાં આવે. પ્રસ્તાવિત માલિકી વહેંચણી:",
@@ -520,10 +524,10 @@ gu: {
   own_fine: "આ માલિકીનો પ્રસ્તાવ છે, નફો કે આવક વહેંચણીનો ફોર્મ્યુલા નથી. અંતિમ શેર ફાળવણી, મતદાન અધિકારો, આવક વિતરણ અને બાયબેકની માલિકી પરની અસર હજુ સ્પષ્ટ થવાની બાકી છે અને અંતિમ કરારોમાં નક્કી થશે.",
   mem_h: "મેમ્બરશિપ પ્રસ્તાવ", mem_p: "ભવિષ્યનો રિસોર્ટ હોલિડે મેમ્બરશિપ આપી શકે છે.",
   mem_fine: "રહેવાની પાત્રતા, બુકિંગ નિયમો, ટેક્સ, મેન્ટેનન્સ ચાર્જ અને અન્ય ફી હજુ નક્કી થઈ નથી.",
-  reg_eb: "ખાનગી વીડિયો મીટિંગ", reg_h: "પ્રોજેક્ટ ચર્ચા માટે રજિસ્ટર કરો",
+  reg_eb: "ખાનગી વીડિયો મીટિંગ", reg_h: "ઑનલાઇન મીટિંગ",
   m_dates: "તારીખો", m_dates_v: "સોમ 9 · બુધ 11 · શુક્ર 13 · રવિ 15 નવેમ્બર 2026",
-  m_time: "સમય", m_time_v: "બપોરે 3:00 – સાંજે 5:00 (IST)", m_plat: "પ્લેટફોર્મ",
-  reg_cta: "તમને અનુકૂળ તારીખ પસંદ કરો અને વીડિયો મીટિંગ લિંક મેળવવા માટે રજિસ્ટર કરો.",
+  m_time: "સમય", m_time_v: "બપોરે 3થી સાંજે 5 — ભારતીય સમય", m_plat: "પ્લેટફોર્મ",
+  reg_cta: "પ્રોજેક્ટ વિશે જાણવા અને તમારા પ્રશ્નો પૂછવા ઑનલાઇન મીટિંગમાં જોડાઓ.<br><strong>9, 11, 13 અથવા 15 નવેમ્બર 2026માંથી અનુકૂળ તારીખ પસંદ કરો.</strong><br><strong>દરેક મીટિંગ: બપોરે 3થી સાંજે 5 વાગ્યા સુધી — ભારતીય સમય.</strong><br>Google Meetની લિંક મેળવવા નીચે રજિસ્ટર કરો.",
   f_meeting: "તમે કઈ મીટિંગમાં જોડાશો?", m_sel: "તારીખ પસંદ કરો…", e_meeting: "કૃપા કરીને મીટિંગની તારીખ પસંદ કરો.",
   f_name: "પૂરું નામ", e_name: "કૃપા કરીને તમારું પૂરું નામ લખો.",
   f_mobile: "મોબાઇલ નંબર (WhatsApp)", h_mobile: "(કન્ટ્રી કોડ સાથે, દા.ત. +91 98765 43210)", e_mobile: "કૃપા કરીને કન્ટ્રી કોડ સાથે મોબાઇલ નંબર લખો.",
