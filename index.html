@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>Dwarka · Private Project Discussion</title>
+<meta name="description" content="Private project discussion for existing Richwealth investors.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0b1a36; --navy-2:#11264c; --navy-3:#1a3360;
+    --green:#7cc242; --green-dk:#4f8f22;
+    --gold:#d4b26a; --gold-lt:#efdcaa;
+    --white:#ffffff; --ink:#0b1a36; --muted:#5a6680; --line:#e3e7ef; --paper:#f6f8fb;
+    --err:#b3261e;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{background:var(--paper); color:var(--ink); font:16px/1.6 Inter,system-ui,sans-serif; -webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:Montserrat,Inter,sans-serif; line-height:1.15; margin:0}
+  a{color:inherit}
+  .wrap{max-width:1040px; margin:0 auto; padding:0 16px}
+
+  /* ---------- hero ---------- */
+  .hero{background:var(--navy); color:var(--white); padding:28px 0 0; text-align:center}
+  .conf-pill{display:inline-block; border:1px solid var(--gold); color:var(--gold-lt); border-radius:999px;
+    padding:6px 16px; font:600 12px/1.3 Montserrat,sans-serif; letter-spacing:.14em; text-transform:uppercase}
+  .hero h1{font-size:clamp(46px,11vw,96px); font-weight:800; letter-spacing:.06em; margin:18px 0 6px}
+  .hero .sub{font:600 clamp(18px,3.6vw,28px)/1.25 Montserrat,sans-serif; color:#e8ecf5; margin:0}
+  .hero .tag{display:block; margin:14px 0 24px; color:var(--green);
+    font:700 15px/1.4 Montserrat,sans-serif; letter-spacing:.02em}
+  .hero-actions{margin:0 0 28px}
+
+  .figure{position:relative; margin:0; max-width:1240px; margin-inline:auto}
+  .figure img{display:block; width:100%; height:auto; aspect-ratio:1672/941; object-fit:cover; background:var(--navy-2)}
+  .figure figcaption{background:var(--navy-2); color:#c9d2e3; font-size:13px; padding:10px 16px; text-align:center;
+    border-top:2px solid var(--gold)}
+  .figure .badge{position:absolute; left:12px; top:12px; background:rgba(11,26,54,.86); color:#fff;
+    font:700 11px/1 Montserrat,sans-serif; letter-spacing:.1em; padding:7px 10px; border-radius:4px; text-transform:uppercase}
+
+  .btn{display:inline-block; border:0; cursor:pointer; text-decoration:none; border-radius:8px;
+    font:700 16px/1 Montserrat,sans-serif; padding:16px 24px}
+  .btn-green{background:var(--green); color:var(--navy)}
+  .btn-green:hover{background:#8fd352}
+  .btn:disabled{opacity:.6; cursor:wait}
+
+  /* ---------- confidentiality ---------- */
+  .notice{background:#fff8e6; border-bottom:1px solid #ecd9a6; color:#5b4613; font-size:14.5px}
+  .notice .wrap{padding-top:14px; padding-bottom:14px; display:flex; gap:10px; align-items:flex-start}
+  .notice svg{flex:none; margin-top:3px}
+
+  /* ---------- sections ---------- */
+  section.block{padding:52px 0}
+  section.block + section.block{padding-top:0}
+  .eyebrow{font:700 12px/1 Montserrat,sans-serif; letter-spacing:.16em; text-transform:uppercase; color:var(--green-dk); margin:0 0 10px}
+  .block h2{font-size:clamp(24px,4.4vw,32px); margin-bottom:14px}
+  .lead{font-size:17px; color:#273352; max-width:760px}
+  .card{background:#fff; border:1px solid var(--line); border-radius:14px; padding:24px}
+  .grid2{display:grid; gap:20px; grid-template-columns:1fr}
+  @media(min-width:820px){ .grid2{grid-template-columns:1fr 1fr} }
+
+  ul.ticks{list-style:none; padding:0; margin:12px 0 0}
+  ul.ticks li{position:relative; padding-left:26px; margin:6px 0}
+  ul.ticks li:before{content:""; position:absolute; left:2px; top:9px; width:10px; height:10px; border-radius:50%; background:var(--green)}
+  .fine{font-size:13.5px; color:var(--muted); margin-top:12px}
+
+  /* participation */
+  .price{background:var(--navy); color:#fff; border-radius:14px; padding:26px 24px; text-align:center}
+  .price .big{font:800 clamp(38px,8vw,56px)/1 Montserrat,sans-serif; color:var(--green)}
+  .price .big small{font-size:.45em; color:#fff; font-weight:700}
+  .price p{margin:12px 0 0; color:#d6ddeb}
+  .stats{display:grid; grid-template-columns:1fr; gap:12px; margin-top:18px}
+  @media(min-width:640px){ .stats{grid-template-columns:repeat(3,1fr)} }
+  .stat{background:#fff; border:1px solid var(--line); border-radius:12px; padding:16px; text-align:center}
+  .stat b{display:block; font:800 24px/1.1 Montserrat,sans-serif; color:var(--navy)}
+  .stat span{font-size:14px; color:var(--muted)}
+
+  /* buyback */
+  .buyback{border:2px solid var(--gold); background:#fff; border-radius:14px; padding:24px}
+  .example{display:flex; align-items:center; justify-content:center; gap:14px; flex-wrap:wrap;
+    background:var(--navy); color:#fff; border-radius:10px; padding:16px; margin:16px 0; font:800 26px/1 Montserrat,sans-serif}
+  .example .arrow{color:var(--gold)}
+  .example small{display:block; font:500 12px/1.2 Inter,sans-serif; color:#c9d2e3; margin-top:6px; text-align:center}
+  .caution{background:#fdf3f2; border-left:4px solid var(--err); padding:12px 14px; border-radius:6px; font-size:14.5px; color:#4a1c18}
+
+  /* ---------- registration ---------- */
+  .reg{background:var(--navy); color:#fff; padding:56px 0}
+  .reg h2{font-size:clamp(26px,5vw,36px)}
+  .meet{display:grid; gap:10px; grid-template-columns:1fr; margin:20px 0 28px}
+  @media(min-width:640px){ .meet{grid-template-columns:repeat(3,1fr)} }
+  .meet div{background:var(--navy-2); border:1px solid var(--navy-3); border-radius:10px; padding:14px 16px}
+  .meet span{display:block; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--gold-lt)}
+  .meet b{font:700 17px/1.3 Montserrat,sans-serif}
+  .reg .cta{font-size:17px; color:#e4e9f3; margin:0}
+
+  form.panel, .done{background:#fff; color:var(--ink); border-radius:14px; padding:24px; max-width:720px}
+  .field{margin-bottom:18px}
+  .field label, .field .lbl{display:block; font-weight:600; font-size:15px; margin-bottom:6px}
+  .field .hint{font-weight:400; color:var(--muted); font-size:13px}
+  input[type=text], input[type=tel], input[type=email], select, textarea{
+    width:100%; font:16px Inter,sans-serif; color:var(--ink); background:#fff;
+    border:1.5px solid #cdd4e1; border-radius:8px; padding:12px 14px}
+  textarea{min-height:96px; resize:vertical}
+  input:focus, select:focus, textarea:focus{outline:none; border-color:var(--green-dk); box-shadow:0 0 0 3px rgba(124,194,66,.25)}
+  .check{display:flex; gap:10px; align-items:flex-start; font-size:15px; font-weight:400}
+  .check input{width:20px; height:20px; margin-top:2px; flex:none; accent-color:var(--green-dk)}
+  .err{color:var(--err); font-size:13.5px; margin-top:6px; display:none}
+  .field.bad .err{display:block}
+  .field.bad input, .field.bad select{border-color:var(--err)}
+  .hp{position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden}
+  .formmsg{display:none; margin-top:14px; padding:12px 14px; border-radius:8px; background:#fdf3f2; color:#4a1c18; font-size:14.5px}
+  .formmsg.show{display:block}
+  .done{display:none}
+  .done h3{font-size:24px; margin:8px 0 10px; color:var(--green-dk)}
+  .done ol{padding-left:20px; margin:10px 0}
+  .ref{display:inline-block; background:var(--paper); border:1px dashed #b9c2d3; border-radius:6px; padding:4px 10px; font:600 14px Montserrat,sans-serif}
+
+  footer{background:#071227; color:#a9b4ca; font-size:13.5px; padding:28px 0 36px; text-align:center}
+  footer p{max-width:780px; margin:0 auto 10px}
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="wrap">
+    <span class="conf-pill">Strictly confidential · Do not forward</span>
+    <h1>DWARKA</h1>
+    <p class="sub">A Proposed Coastal Resort Investment</p>
+    <span class="tag">Exclusively for existing Richwealth investors</span>
+    <div class="hero-actions"><a class="btn btn-green" href="#register">Register for the discussion</a></div>
+  </div>
+  <figure class="figure">
+    <span class="badge">AI concept</span>
+    <img src="resort.jpg" srcset="resort-900.jpg 900w, resort.jpg 1672w" sizes="100vw"
+         alt="AI-generated concept of a proposed beachfront resort with villas, pools and highway frontage" width="1672" height="941">
+    <figcaption>AI concept of the proposed resort — not an actual site photograph.</figcaption>
+  </figure>
+</header>
+
+<!-- ============ CONFIDENTIALITY ============ -->
+<div class="notice" role="note">
+  <div class="wrap">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8a6a12" stroke-width="2" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+    <div><strong>Strictly confidential.</strong> For existing Richwealth investors only. Do not forward or share publicly.</div>
+  </div>
+</div>
+
+<main>
+<!-- ============ PROJECT ============ -->
+<section class="block">
+  <div class="wrap">
+    <p class="eyebrow">The project</p>
+    <h2>Land near Dwarka, on the coast</h2>
+    <p class="lead">Richwealth is considering acquiring <strong>16 lakh sq. ft. of non-residential land</strong> within a larger 72-acre property near Dwarka.</p>
+    <div class="grid2" style="margin-top:20px">
+      <div class="card">
+        <h3 style="font-size:18px">Location highlights</h3>
+        <ul class="ticks">
+          <li>Beachfront</li>
+          <li>National highway frontage</li>
+          <li>Approximately 15–16 km from Dwarkadhish Temple</li>
+        </ul>
+        <p class="fine">Location highlights are as supplied by the company. Site area, classification, frontage and distance remain subject to verification.</p>
+      </div>
+      <div class="card">
+        <h3 style="font-size:18px">Future vision</h3>
+        <p style="margin:12px 0 0">Develop a membership-based coastal resort in Dwarka, with a longer-term vision for a Char Dham hospitality network.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PARTICIPATION ============ -->
+<section class="block">
+  <div class="wrap">
+    <p class="eyebrow">Proposed participation</p>
+    <h2>How participation is proposed to work</h2>
+    <div class="price">
+      <div class="big">₹400 <small>per sq. ft.</small></div>
+      <p><strong style="color:#fff">Minimum: 1,000 sq. ft. / ₹4 lakh.</strong> Additional participation in multiples of 1,000 sq. ft.</p>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>16 lakh sq. ft.</b><span>Total proposed project area</span></div>
+      <div class="stat"><b>10 lakh sq. ft.</b><span>Proposed investor allocation</span></div>
+      <div class="stat"><b>6 lakh sq. ft.</b><span>Proposed company allocation</span></div>
+    </div>
+    <p class="fine">A participation of 1,000 sq. ft. is a share in the proposed project. It does not mean an individually registered plot.</p>
+  </div>
+</section>
+
+<!-- ============ BUYBACK ============ -->
+<section class="block">
+  <div class="wrap">
+    <div class="buyback">
+      <p class="eyebrow" style="color:#8a6a12">Proposed buyback</p>
+      <h2>Buyback at twice the participation amount after four years</h2>
+      <p style="margin:0">The company proposes a buyback at twice the original participation amount after four years, representing 100% appreciation.</p>
+      <div class="example" aria-label="Example: 4 lakh rupees becomes 8 lakh rupees after four years">
+        <div>₹4 lakh<small>Participation</small></div>
+        <div class="arrow">→</div>
+        <div>₹8 lakh<small>Proposed buyback after 4 years</small></div>
+      </div>
+      <p class="caution">This is a proposed company buyback, subject to definitive agreements and the company’s ability to fulfil its obligations. It is not a guaranteed market appreciation or guaranteed return.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OWNERSHIP + MEMBERSHIP ============ -->
+<section class="block">
+  <div class="wrap">
+    <div class="grid2">
+      <div class="card">
+        <p class="eyebrow">For discussion</p>
+        <h3 style="font-size:20px">Ownership proposal</h3>
+        <p>The intention is to hold the property through a company and issue shares to participating investors. The proposed ownership split is:</p>
+        <ul class="ticks">
+          <li>Investors collectively: <strong>60%</strong></li>
+          <li>Company / promoters: <strong>40%</strong></li>
+        </ul>
+        <p class="fine">This is an ownership proposal, not a profit or revenue distribution formula. Final share allocation, voting rights, income distribution and the effect of the buyback on ownership still need to be clarified and set out in definitive agreements.</p>
+      </div>
+      <div class="card">
+        <p class="eyebrow">For discussion</p>
+        <h3 style="font-size:20px">Membership proposal</h3>
+        <p>The future resort may offer holiday memberships.</p>
+        <p class="fine">Stay entitlements, booking rules, taxes, maintenance charges and other fees are not yet finalised.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ REGISTRATION ============ -->
+<section class="reg" id="register">
+  <div class="wrap">
+    <p class="eyebrow" style="color:var(--green)">Private video meeting</p>
+    <h2>Register for the Project Discussion</h2>
+    <div class="meet">
+      <div><span>Date</span><b>Monday, 9 November 2026</b></div>
+      <div><span>Time</span><b>3:00 PM – 5:00 PM IST</b></div>
+      <div><span>Platform</span><b>Google Meet</b></div>
+    </div>
+    <p class="cta" style="margin-bottom:22px">Register to receive your video meeting link.</p>
+
+    <form class="panel" id="regform" novalidate>
+      <div class="field" data-k="name">
+        <label for="f-name">Full name</label>
+        <input type="text" id="f-name" name="name" autocomplete="name" maxlength="120" required>
+        <div class="err">Please enter your full name.</div>
+      </div>
+      <div class="field" data-k="mobile">
+        <label for="f-mobile">Mobile number <span class="hint">(with country code, e.g. +91 98765 43210)</span></label>
+        <input type="tel" id="f-mobile" name="mobile" autocomplete="tel" maxlength="25" value="+91 " required>
+        <div class="err">Please enter your mobile number with country code.</div>
+      </div>
+      <div class="field" data-k="email">
+        <label for="f-email">Email address</label>
+        <input type="email" id="f-email" name="email" autocomplete="email" maxlength="120" required>
+        <div class="err">Please enter a valid email address.</div>
+      </div>
+      <div class="field" data-k="city">
+        <label for="f-city">City</label>
+        <input type="text" id="f-city" name="city" autocomplete="address-level2" maxlength="80" required>
+        <div class="err">Please enter your city.</div>
+      </div>
+      <div class="field" data-k="amount">
+        <label for="f-amount">Indicative investment amount</label>
+        <select id="f-amount" name="amount" required>
+          <option value="">Select…</option>
+          <option>₹4 lakh (1,000 sq. ft.)</option>
+          <option>₹8 lakh (2,000 sq. ft.)</option>
+          <option>₹12 lakh (3,000 sq. ft.)</option>
+          <option>₹20 lakh (5,000 sq. ft.)</option>
+          <option>₹40 lakh (10,000 sq. ft.)</option>
+          <option>Above ₹40 lakh</option>
+          <option>Not decided yet</option>
+        </select>
+        <div class="err">Please choose an option.</div>
+        <p class="fine" style="margin-top:6px">Indicative only. Registering is not a commitment and no payment is collected here.</p>
+      </div>
+      <div class="field">
+        <label for="f-q">Questions for the meeting <span class="hint">(optional)</span></label>
+        <textarea id="f-q" name="questions" maxlength="2000"></textarea>
+      </div>
+      <div class="field" data-k="investor">
+        <label class="check"><input type="checkbox" id="f-investor" name="investor"> I confirm that I am an existing Richwealth investor.</label>
+        <div class="err">This discussion is only for existing Richwealth investors.</div>
+      </div>
+      <div class="field" data-k="consent">
+        <label class="check"><input type="checkbox" id="f-consent" name="consent"> I agree to be contacted by Richwealth by WhatsApp, phone or email with information about this enquiry, including the meeting link.</label>
+        <div class="err">Please give consent so we can send you the meeting link.</div>
+      </div>
+      <div class="hp" aria-hidden="true"><label>Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+
+      <button type="submit" class="btn btn-green" id="subbtn" style="width:100%">Register</button>
+      <div class="formmsg" id="formmsg" role="alert"></div>
+    </form>
+
+    <div class="done" id="done" role="status" tabindex="-1">
+      <p class="eyebrow">Saved</p>
+      <h3>Registration received</h3>
+      <p>Thank you<span id="d-name"></span>. Your registration has been saved. Reference: <span class="ref" id="d-ref"></span></p>
+      <p style="margin-bottom:4px"><strong>How you will receive the meeting link</strong></p>
+      <ol>
+        <li>The Richwealth team checks your registration against our investor records.</li>
+        <li>The Google Meet link is then sent to you personally on <strong>WhatsApp</strong> and by <strong>email</strong>, before the meeting on Monday, 9 November 2026 (3:00 PM IST).</li>
+        <li>Please keep the link private. It is for you only.</li>
+      </ol>
+      <p class="fine">Not received the link by 2:00 PM IST on 9 November? WhatsApp us on <a href="https://wa.me/919913121121">+91 99131 21121</a>.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Private discussion invitation. Acquisition, development, ownership structure, membership benefits and buyback terms are proposed and subject to due diligence, applicable approvals and definitive agreements.</p>
+    <p>Strictly confidential · For existing Richwealth investors only · dwarka.richwealth.in</p>
+  </div>
+</footer>
+
+<script>
+/* ===== Registration backend =====
+   Paste the Google Apps Script web-app URL (ends in /exec) below.
+   See apps_script.gs for setup. Until it is set, the form refuses to submit,
+   so nobody is ever told they are registered when they are not. */
+var ENDPOINT = "";
+
+(function(){
+  var form = document.getElementById("regform");
+  var btn  = document.getElementById("subbtn");
+  var msg  = document.getElementById("formmsg");
+  var HELP = 'Please try again, or WhatsApp us on <a href="https://wa.me/919913121121">+91 99131 21121</a> to register.';
+
+  function val(id){ return document.getElementById(id).value.trim(); }
+  function mark(k, bad){ var f = form.querySelector('[data-k="'+k+'"]'); if(f) f.classList.toggle("bad", bad); return !bad; }
+  function fail(html){ msg.innerHTML = html; msg.classList.add("show"); btn.disabled = false; btn.textContent = "Register"; }
+
+  form.addEventListener("submit", function(ev){
+    ev.preventDefault();
+    msg.classList.remove("show");
+    var mobile = val("f-mobile").replace(/[\s\-()]/g, "");
+    var ok = [
+      mark("name",     val("f-name").length < 2),
+      mark("mobile",   !/^\+\d{8,15}$/.test(mobile)),
+      mark("email",    !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(val("f-email"))),
+      mark("city",     val("f-city").length < 2),
+      mark("amount",   !val("f-amount")),
+      mark("investor", !document.getElementById("f-investor").checked),
+      mark("consent",  !document.getElementById("f-consent").checked)
+    ].every(Boolean);
+    if (!ok){ var b = form.querySelector(".bad input, .bad select"); if (b) b.focus(); return; }
+
+    if (!ENDPOINT){ fail("Online registration is not open yet. " + HELP); return; }
+
+    btn.disabled = true; btn.textContent = "Saving your registration…";
+    var payload = {
+      name: val("f-name"), mobile: val("f-mobile"), email: val("f-email"), city: val("f-city"),
+      amount: val("f-amount"), questions: val("f-q"), investor: "Yes", consent: "Yes",
+      website: form.website.value
+    };
+    var ctrl = window.AbortController ? new AbortController() : null;
+    var t = setTimeout(function(){ if (ctrl) ctrl.abort(); }, 25000);
+
+    // text/plain body = no CORS preflight; Apps Script returns readable JSON.
+    fetch(ENDPOINT, { method: "POST", body: JSON.stringify(payload), signal: ctrl ? ctrl.signal : undefined })
+      .then(function(r){ return r.json(); })
+      .then(function(res){
+        clearTimeout(t);
+        if (!res || res.ok !== true){ throw new Error("not saved"); }
+        // Only reached once the backend has confirmed the row is written.
+        document.getElementById("d-name").textContent = ", " + payload.name.split(" ")[0];
+        document.getElementById("d-ref").textContent = res.ref || "—";
+        form.style.display = "none";
+        var d = document.getElementById("done"); d.style.display = "block"; d.focus();
+      })
+      .catch(function(){ clearTimeout(t); fail("Sorry, your registration could not be saved. " + HELP); });
+  });
+})();
+</script>
+</body>
+</html>
