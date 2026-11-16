@@ -1,3 +1,5 @@
 # Backend source stays local (holds the sheet id).
 apps_script.gs
 poster/
+land_deck/
+index_v3_backup.html
